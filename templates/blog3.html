@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Gutim Template">
+    <meta name="keywords" content="Gutim, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Blog-Details</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/slicknav.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header Section Begin -->
+    <header class="header-section">
+        <div class="container">
+            <div class="logo">
+                <a href="./index.html">
+                    <img src="{% static 'FITSPIRATION.png' %}" alt="">
+                </a>
+            </div>
+            <div class="nav-menu">
+                <nav class="mainmenu mobile-menu">
+                    <ul>
+                        <li><a href="{% url 'home' %}">Home</a></li>
+                        <li><a href="{% url 'about' %}">About</a></li>
+                        <li><a href="{% url 'classes' %}">Classes</a></li>
+                        <li class="active"><a href="{% url 'blog' %}">Blog</a></li>
+                        <li><a href="{% url 'user_fitness' %}">Dashboard</a></li>
+                        <li><a href="{% url 'contact' %}">Contacts</a></li>
+                    </ul>
+                </nav>
+                                <a href="{% url 'login' %}" class="primary-btn signup-btn">Logout</a>
+
+            </div>
+            <div id="mobile-menu-wrap"></div>
+        </div>
+    </header>
+    <!-- Header End -->
+
+
+
+<!-- Blog Details Hero Section Begin -->
+<section class="blog-details-hero set-bg" data-setbg="{% static 'img/blog/blog-detail-hero.jpg' %}">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="bd-hero-text">
+                    <span>#Body</span>
+                    <h2>Body Transformation Journey: From Couch to 5K</h2>
+                    <div class="bw-date">February 19, 2025</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Blog Details Hero Section End -->
+
+<!-- Blog Details Section Begin -->
+<section class="blog-details spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 offset-lg-1">
+                <div class="bd-text">
+                    <div class="bd-title">
+                        <p>Transforming your body and lifestyle can seem overwhelming, but small, consistent steps lead to big results. This journey focuses on gradually moving from a sedentary lifestyle to completing your first 5K run.</p>
+                        <p>We cover training tips, mindset shifts, nutrition guidance, and motivational strategies that help beginners stay on track and achieve their fitness goals.</p>
+                    </div>
+                    <div class="bd-pic">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <img src="{% static 'img/blog/bd-5.jpg' %}" alt="">
+                            </div>
+                            <div class="col-lg-6">
+                                <img src="{% static 'img/blog/bd-6.jpg' %}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bd-more-text">
+                        <div class="bm-item">
+                            <h4>1. Start Small</h4>
+                            <p>Begin with short walks or light jogging. Gradually increase distance and pace to build endurance.</p>
+                        </div>
+                        <div class="bm-item">
+                            <h4>2. Set Realistic Goals</h4>
+                            <p>Track your progress with achievable milestones, such as running 1K, then 3K, and finally 5K.</p>
+                        </div>
+                        <div class="bm-item">
+                            <h4>3. Consistent Training</h4>
+                            <p>Follow a structured plan with alternating rest and run days to prevent burnout and injuries.</p>
+                        </div>
+                        <div class="bm-item">
+                            <h4>4. Nutrition Matters</h4>
+                            <p>Support your workouts with balanced meals rich in protein, complex carbs, and healthy fats.</p>
+                        </div>
+                        <div class="bm-item">
+                            <h4>5. Celebrate Progress</h4>
+                            <p>Recognize improvements, no matter how small, to maintain motivation and consistency.</p>
+                        </div>
+                    </div>
+                    <div class="bd-quote">
+                        <samp>"</samp>
+                        <p>“The journey of a thousand miles begins with a single step.”</p>
+                        <div class="quote-author">
+                            <h5>Lao Tzu</h5>
+                            <span>Motivation</span>
+                        </div>
+                    </div>
+                    <div class="bd-last-para">
+                        <p>This transformation proves that anyone can achieve fitness milestones with dedication and persistence. From the couch to completing a 5K, every step counts toward a healthier, stronger body.</p>
+                    </div>
+                    <div class="tag-share">
+                        <div class="tags">
+                            <a href="#">#Body</a>
+                            <a href="#">#Transformation</a>
+                            <a href="#">#5KJourney</a>
+                        </div>
+                        <div class="social-share">
+                            <span>Share:</span>
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-google-plus"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-youtube-play"></i></a>
+                        </div>
+                    </div>
+                    <div class="blog-author">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <div class="ba-pic">
+                                    <img src="{% static 'img/blog/blog-posted.jpg' %}" alt="">
+                                </div>
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="ba-text">
+                                    <h5>Emily Parker</h5>
+                                    <p>Fitness coach and running enthusiast, helping beginners start their journey to a healthier lifestyle.</p>
+                                    <div class="bt-social">
+                                        <a href="#"><i class="fa fa-facebook"></i></a>
+                                        <a href="#"><i class="fa fa-twitter"></i></a>
+                                        <a href="#"><i class="fa fa-google-plus"></i></a>
+                                        <a href="#"><i class="fa fa-instagram"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="leave-comment">
+                        <h3>Leave A Comment</h3>
+                        <form method = "POST" action="{% url 'comment' %}">
+                            {%csrf_token%}
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <input type="text" placeholder="Name" name = "name">
+                                </div>
+                                <div class="col-lg-6">
+                                    <input type="text" placeholder="Email" name="email">
+                                </div>
+                                <div class="col-lg-12">
+                                    <textarea placeholder="Comment" name="comment"></textarea>
+                                    <button type="submit">Comment</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Blog Details Section End -->
+
+<section class="latest-blog-section recommend spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h3>Latest Blogs</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="single-blog-item">
+                    <img src="{% static 'img/blog/blog-1.jpg' %}" alt="">
+                    <div class="blog-widget">
+                        <div class="bw-date">February 17, 2025</div>
+                        <a href="#" class="tag">#Gym</a>
+                    </div>
+                    <h4><a href="#">Top 10 Strength Training Tips for Beginners</a></h4>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="single-blog-item">
+                    <img src="{% static 'img/blog/blog-2.jpg' %}" alt="">
+                    <div class="blog-widget">
+                        <div class="bw-date">February 18, 2025</div>
+                        <a href="#" class="tag">#Sport</a>
+                    </div>
+                    <h4><a href="3">5 Inspiring Stories of Athletes Overcoming Adversity</a></h4>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="single-blog-item">
+                    <img src="{% static 'img/blog/blog-3.jpg' %}" alt="">
+                    <div class="blog-widget">
+                        <div class="bw-date">February 19, 2025</div>
+                        <a href="#" class="tag">#Body</a>
+                    </div>
+                    <h4><a href="#">5 Tips to Improve Your Core Strength</a></h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+    <!-- Footer Section Begin -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="contact-option">
+                        <span>Phone</span>
+                        <p>+91 91870 98214</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="contact-option">
+                        <span>Address</span>
+                        <p>Rajiv Chowk, Delhi</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="contact-option">
+                        <span>Email</span>
+                        <p>fitspiration@gmail.com</p>
+                    </div>
+                </div>
+            </div>%
+            <div class="subscribe-option set-bg" data-setbg="{%static 'img/footer-signup.jpg' %} ">
+                <div class="so-text">
+                    <h4>Subscribe Us</h4>
+                    <p>Sign up to receive the latest information </p>
+                </div>
+                <form action="#" class="subscribe-form">
+                    <input type="text" placeholder="Enter Your Mail">
+                    <button type="submit"><i class="fa fa-send"></i></button>
+                </form>
+            </div>
+            <div class="copyright-text">
+                <ul>
+                    <li><a href="#">Term&Use</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+                <div class="footer-social">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-instagram"></i></a>
+                    <a href="#"><i class="fa fa-dribbble"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+
+    <!-- Js Plugins -->
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/mixitup.min.js' %}"></script>
+    <script src="{% static 'js/jquery.slicknav.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>

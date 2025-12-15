@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fitspiration — All Fitness Plans</title>
+
+  <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/slicknav.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Minimal reset + utility -->
+  <style>
+ body {
+    font-family: "Poppins", sans-serif;
+    background-color: #f8f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.yoga-flows-section {
+    padding: 60px 20px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title h2 {
+    font-size: 36px;
+    text-transform: uppercase;
+    color: #111;
+    font-weight: 700;
+}
+
+.section-title p {
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 16px;
+}
+
+.flow-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.flow-card {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.flow-card:hover {
+    transform: translateY(-8px);
+}
+
+.flow-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.flow-card h3 {
+    font-size: 22px;
+    color: #3a7352;
+    margin: 15px;
+}
+
+.flow-card p {
+    color: #555;
+    margin: 0 15px 10px;
+    line-height: 1.6;
+}
+
+.flow-card ul {
+    margin: 0 30px 20px;
+    list-style: disc;
+    color: #444;
+    line-height: 1.6;
+}
+
+.cta-section {
+    text-align: center;
+    background: #e9f7ef;
+    margin-top: 60px;
+    padding: 40px;
+    border-radius: 20px;
+}
+
+.btn-join {
+    display: inline-block;
+    background: #3a7352;
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-join:hover {
+    background: #2e5a3f;
+}
+
+</style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header-section">
+        <div class="container">
+            <div class="logo">
+                <a href="./index.html">
+                    <img  src="{% static 'FITSPIRATION.png' %}" alt="">
+                </a>
+            </div>
+            <div class="nav-menu">
+                <nav class="mainmenu mobile-menu">
+                    <ul>
+                        <li class="active"><a href="{% url 'home' %}">Home</a></li>
+                        <li><a href="{% url 'about' %}">About</a></li>
+                        <li><a href="{% url 'classes' %}">Classes</a></li>
+                        <li><a href="{% url 'blog' %}">Blog</a></li>
+                        <li><a href="{% url 'user_fitness' %}">Dashboard</a></li>
+                        <li><a href="{% url 'contact' %}">Contacts</a></li>
+                    </ul>
+                </nav>
+                <a href="{% url 'login' %}" class="primary-btn signup-btn">Logout</a>
+
+            </div>
+            <div id="mobile-menu-wrap"></div>
+        </div>
+    </header>
+
+      <section class="hero-section set-bg" data-setbg="{% static 'img/hero-bg.jpg' %}">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="hero-text">
+                        <span class="pill">All Plans</span>
+                            <h1>Yoga for beginners.</h1>
+                            <p></p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<section class="yoga-section spad">
+    <div class="container">
+        <div class="section-title">
+            <h2>Yoga for Beginners</h2>
+            <p>Start your journey towards balance, flexibility, and mindfulness with these beginner-friendly yoga poses and routines.</p>
+        </div>
+
+        <div class="yoga-routines">
+            <h3>🌞 Morning Routine</h3>
+            <ul>
+                <li><strong>1. Sun Salutation (Surya Namaskar):</strong> 5–10 rounds to energize your body.</li>
+                <li><strong>2. Cat-Cow Stretch:</strong> Improves spine flexibility.</li>
+                <li><strong>3. Downward Dog:</strong> Strengthens arms, legs, and back.</li>
+                <li><strong>4. Warrior I & II:</strong> Builds strength and stability.</li>
+            </ul>
+
+            <h3>🌙 Evening Routine</h3>
+            <ul>
+                <li><strong>1. Child’s Pose:</strong> Relaxing and calming for the body.</li>
+                <li><strong>2. Seated Forward Bend:</strong> Relieves stress and stretches the back.</li>
+                <li><strong>3. Bridge Pose:</strong> Strengthens glutes and lower back.</li>
+                <li><strong>4. Corpse Pose (Savasana):</strong> End your session with deep relaxation.</li>
+            </ul>
+        </div>
+
+        <div class="yoga-benefits">
+            <h3>🌿 Benefits of Yoga</h3>
+            <p>Practicing yoga regularly helps in improving:</p>
+            <ul>
+                <li>Flexibility and balance</li>
+                <li>Muscle strength and posture</li>
+                <li>Focus and mindfulness</li>
+                <li>Stress management and relaxation</li>
+                <li>Overall physical and mental health</li>
+            </ul>
+        </div>
+
+        <div class="yoga-tips">
+            <h3>🧠 Beginner Tips</h3>
+            <ul>
+                <li>Start slow — focus on correct posture, not speed.</li>
+                <li>Practice on an empty stomach or 2 hours after a meal.</li>
+                <li>Use a yoga mat and wear comfortable clothing.</li>
+                <li>Inhale and exhale slowly — breathing is key in yoga.</li>
+                <li>Be consistent — 15 to 30 minutes daily is enough.</li>
+            </ul>
+        </div>
+
+        <div class="cta-section">
+            <h3>🧘 Ready to Begin?</h3>
+            <p>Get a personalized yoga plan suited for your fitness level and goals.</p>
+            <a href="#" class="btn-start">Start Your Yoga Journey</a>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer Section Begin -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="contact-option">
+                        <span>Phone</span>
+                        <p>+91 91870 98214</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="contact-option">
+                        <span>Address</span>
+                        <p>Rajiv Chowk, Delhi</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="contact-option">
+                        <span>Email</span>
+                        <p>fitspiration@gmail.com</p>
+                    </div>
+                </div>
+            </div>%
+            <div class="subscribe-option set-bg" data-setbg="{%static 'img/footer-signup.jpg' %} ">
+                <div class="so-text">
+                    <h4>Subscribe Us</h4>
+                    <p>Sign up to receive the latest information </p>
+                </div>
+                <form action="#" class="subscribe-form">
+                    <input type="text" placeholder="Enter Your Mail">
+                    <button type="submit"><i class="fa fa-send"></i></button>
+                </form>
+            </div>
+            <div class="copyright-text">
+                <ul>
+                    <li><a href="#">Term&Use</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+                <div class="footer-social">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-instagram"></i></a>
+                    <a href="#"><i class="fa fa-dribbble"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+  <!-- Small JS for interactive bits -->
+  <script>
+    // Smooth scroll to anchors (basic)
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',e=>{
+        const target = document.querySelector(a.getAttribute('href'));
+        if(target){e.preventDefault();target.scrollIntoView({behavior:'smooth',block:'start'});}
+      })
+    })
+  </script>
+  <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/mixitup.min.js' %}"></script>
+    <script src="{% static 'js/jquery.slicknav.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>

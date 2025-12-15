@@ -1,0 +1,164 @@
+{% comment %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@700&family=Merge+One&display=swap" rel="stylesheet">
+    <style>
+        
+    </style>
+</head>
+<body>
+<h2>Your Fitness Report</h2>
+<p>BMI score: {{ bmi_score }}/10</p>
+<p>Fitness Score: {{ fitness_score }}/10</p>
+<p>Calorie Balance: {{ calorie_balance }} kcal</p>
+<p>Hydration Score: {{ hydration_score }}/10</p>
+<p>Sleep Score: {{ sleep_score }}/10</p>
+<p>Workout Score: {{ workout_score }}/10</p>
+<p>Steps Score: {{ steps_score }}/10</p>
+<p>Nutrition Score: {{ nutrition_score }}/10</p>
+
+<a href="{% url 'user_dashboard' %}">🔁 Calculate Again</a>
+</body>
+</html> {% endcomment %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Fitness Report</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #a8edea, #fed6e3);
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+            padding: 40px 0;
+        }
+
+        .container {
+            max-width: 700px;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .score-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 15px;
+            background: #f9f9f9;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            transition: transform 0.2s ease;
+        }
+
+        .score-item:hover {
+            transform: scale(1.02);
+            background: #f0f8ff;
+        }
+
+        .score-item strong {
+            color: #007b5e;
+        }
+
+        .highlight {
+            background: #e6ffee;
+            border-left: 5px solid #2ecc71;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .btn-custom {
+            display: block;
+            width: 100%;
+            background-color: #2ecc71;
+            border: none;
+            color: white;
+            font-weight: 600;
+            border-radius: 10px;
+            padding: 12px;
+            margin-top: 25px;
+            text-decoration: none;
+            text-align: center;
+            transition: background 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            background-color: #27ae60;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        {% comment %} <h2>🏋️ Your Fitness Report</h2> {% endcomment %}
+        <h2>🏋️ Fitness Report for {{ user_email }}</h2>
+        <div class="score-item">
+            <span><strong>Date:</strong></span>
+            <span>{{ selected_date }}</span>
+        </div>
+
+        <div class="score-item">
+            <span><strong>BMI:</strong></span>
+            <span>{{ bmi }} ({{ bmi_status }})</span>
+        </div>
+        <div class="score-item">
+            <span><strong>Fitness Score</strong></span>
+            <span>{{ fitness_score|floatformat:2 }}/10</span>
+        </div>
+        <div class="score-item">
+            <span><strong>Calorie Balance</strong></span>
+            <span>{{ calorie_balance|floatformat:2}} ({{ caloriebalance_status }}) kcal</span>
+        </div>
+        <div class="score-item">
+            <span><strong>Hydration Score</strong></span>
+            <span>{{ hydration_score|floatformat:2}} ({{ hydration_status }})/10</span>
+        </div>
+        <div class="score-item">
+            <span><strong>Sleep Score</strong></span>
+            <span>{{ sleep_score|floatformat:2}} ({{ sleep_status }})/10</span>
+        </div>
+        <div class="score-item">
+            <span><strong>Workout Score</strong></span>
+            <span>{{ workout_score|floatformat:2 }}({{ workout_status }})/10</span>
+        </div>
+        <div class="score-item">
+            <span><strong>Steps Score</strong></span>
+            <span>{{ steps_score|floatformat:2}} ({{ steps_status }})/10</span>
+        </div>
+        <div class="score-item">
+            <span><strong>Nutrition Score</strong></span>
+            <span>{{ nutrition_score|floatformat:2}} ({{ nutrition_status }})/10</span>
+        </div>
+
+        <div class="highlight text-center">
+            <h5>💪 Keep it up!</h5>
+            <p>Balanced sleep, hydration, and nutrition help maintain your fitness score.  
+               Stay consistent for long-term results!</p>
+        </div>
+
+        <a href="{% url 'user_dashboard' %}" class="btn-custom">🔁 Calculate Again</a>
+        <a href="{% url 'user_fitness' %}" class="btn-custom" >Back to Home</a>
+        <a href="{% url 'fitness_charts' %}" class="btn-custom" >Fitness Chart</a>
+
+    </div>
+</body>
+</html>

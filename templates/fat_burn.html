@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fitspiration — All Fitness Plans</title>
+
+  <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/slicknav.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Minimal reset + utility -->
+  <style>
+    .fat-burning {
+  padding: 80px 0;
+}
+.section-title h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #111;
+}
+.section-title p {
+  color: #6b6b6b;
+  max-width: 700px;
+  margin: 0 auto 30px;
+}
+.workout-section {
+  background: #f9f9f9;
+  padding: 25px 20px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+.workout-section h3 {
+  color: #f36100;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+.workout-section ul {
+  list-style: none;
+  padding-left: 15px;
+}
+.workout-section ul li::before {
+  content: "•";
+  color: #f36100;
+  margin-right: 8px;
+}
+.workout-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  margin-top: 15px;
+}
+.exercise {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+.exercise h4 {
+  color: #f36100;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+.calorie-section {
+  background: #fff8f5;
+  padding: 25px;
+  border-left: 5px solid #f36100;
+  border-radius: 10px;
+  margin-top: 40px;
+}
+</style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header-section">
+        <div class="container">
+            <div class="logo">
+                <a href="./index.html">
+                    <img  src="{% static 'FITSPIRATION.png' %}" alt="">
+                </a>
+            </div>
+            <div class="nav-menu">
+                <nav class="mainmenu mobile-menu">
+                    <ul>
+                        <li class="active"><a href="{% url 'home' %}">Home</a></li>
+                        <li><a href="{% url 'about' %}">About</a></li>
+                        <li><a href="{% url 'classes' %}">Classes</a></li>
+                        <li><a href="{% url 'blog' %}">Blog</a></li>
+                        <li><a href="{% url 'user_fitness' %}">Dashboard</a></li>
+                        <li><a href="{% url 'contact' %}">Contacts</a></li>
+                    </ul>
+                </nav>
+                <a href="{% url 'login' %}" class="primary-btn signup-btn">Logout</a>
+
+            </div>
+            <div id="mobile-menu-wrap"></div>
+        </div>
+    </header>
+
+      <section class="hero-section set-bg" data-setbg="{% static 'img/hero-bg.jpg' %}">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="hero-text">
+                        <span class="pill">All Plans</span>
+                            <h1>Your Workout Plan</h1>
+                            <p>Choose a plan based on your goal, experience level, and available equipment. Each plan includes training, sample weekly schedule, nutrition guidance, recovery tips and safety notes.</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<section class="fat-burning spad">
+  <div class="container">
+    <div class="section-title text-center">
+      <h2>Fat Burning Workout</h2>
+      <p>Boost your metabolism, burn calories, and build lean strength with these scientifically designed fat-burning workouts.</p>
+    </div>
+
+    <!-- Warm-Up Section -->
+    <div class="workout-section">
+      <h3>🔥 Warm-Up (5–10 Minutes)</h3>
+      <p>Prepares your body for intense activity and prevents injury.</p>
+      <ul>
+        <li>Jumping Jacks – 2 min</li>
+        <li>Arm Circles – 1 min</li>
+        <li>High Knees – 2 min</li>
+        <li>Bodyweight Squats – 1 min</li>
+      </ul>
+    </div>
+
+    <!-- Cardio Section -->
+    <div class="workout-section">
+      <h3>🏃‍♀️ Cardio Workout (20–30 Minutes)</h3>
+      <p>Improves endurance and burns fat efficiently.</p>
+      <div class="workout-grid">
+        <div class="exercise">
+          <h4>Treadmill Running</h4>
+          <p>Incline 2%, 20 minutes of moderate intensity (Burns ~250 kcal)</p>
+        </div>
+        <div class="exercise">
+          <h4>Cycling</h4>
+          <p>Stationary bike or outdoor cycling, 25 minutes (Burns ~300 kcal)</p>
+        </div>
+        <div class="exercise">
+          <h4>Jump Rope</h4>
+          <p>Alternate 1-minute fast and 1-minute slow intervals for 15 minutes.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- HIIT Section -->
+    <div class="workout-section hiit">
+      <h3>⚡ High-Intensity Interval Training (HIIT)</h3>
+      <p>Short bursts of intense exercise followed by rest. Excellent for fat loss.</p>
+      <ul>
+        <li>Burpees – 30 sec work / 15 sec rest × 4 rounds</li>
+        <li>Mountain Climbers – 40 sec work / 20 sec rest × 3 rounds</li>
+        <li>Jump Squats – 30 sec work / 15 sec rest × 3 rounds</li>
+        <li>Plank to Push-up – 30 sec work / 15 sec rest × 3 rounds</li>
+      </ul>
+    </div>
+
+    <!-- Strength Training -->
+    <div class="workout-section">
+      <h3>🏋️ Strength Training (Optional)</h3>
+      <p>Combines resistance and compound exercises to build muscle while burning fat.</p>
+      <div class="workout-grid">
+        <div class="exercise">
+          <h4>Men (Beginner – Advanced)</h4>
+          <ul>
+            <li>Push-ups – 3 sets × 15 reps</li>
+            <li>Deadlifts – 4 sets × 10 reps</li>
+            <li>Bench Press – 3 sets × 12 reps</li>
+            <li>Pull-ups – 3 sets × 10 reps</li>
+          </ul>
+        </div>
+        <div class="exercise">
+          <h4>Women (Beginner – Advanced)</h4>
+          <ul>
+            <li>Bodyweight Squats – 3 sets × 20 reps</li>
+            <li>Dumbbell Shoulder Press – 3 sets × 12 reps</li>
+            <li>Glute Bridges – 3 sets × 15 reps</li>
+            <li>Lunges – 3 sets × 10 each leg</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stretching Section -->
+    <div class="workout-section">
+      <h3>🧘 Stretch & Cool Down (5–10 Minutes)</h3>
+      <ul>
+        <li>Child’s Pose – 1 min</li>
+        <li>Hamstring Stretch – 1 min</li>
+        <li>Shoulder Rolls – 1 min</li>
+        <li>Full Body Stretch – 2 min</li>
+      </ul>
+    </div>
+
+    <!-- Calorie Section -->
+    <div class="calorie-section">
+      <h3>🔥 Estimated Calorie Burn</h3>
+      <ul>
+        <li>Beginner: 250 – 350 kcal/session</li>
+        <li>Intermediate: 400 – 500 kcal/session</li>
+        <li>Advanced: 600 – 800 kcal/session</li>
+      </ul>
+      <p>*Calories vary based on intensity, duration, and individual metabolism.</p>
+    </div>
+
+  </div>
+</section>
+    <!-- Footer Section Begin -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="contact-option">
+                        <span>Phone</span>
+                        <p>+91 91870 98214</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="contact-option">
+                        <span>Address</span>
+                        <p>Rajiv Chowk, Delhi</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="contact-option">
+                        <span>Email</span>
+                        <p>fitspiration@gmail.com</p>
+                    </div>
+                </div>
+            </div>%
+            <div class="subscribe-option set-bg" data-setbg="{%static 'img/footer-signup.jpg' %} ">
+                <div class="so-text">
+                    <h4>Subscribe Us</h4>
+                    <p>Sign up to receive the latest information </p>
+                </div>
+                <form action="#" class="subscribe-form">
+                    <input type="text" placeholder="Enter Your Mail">
+                    <button type="submit"><i class="fa fa-send"></i></button>
+                </form>
+            </div>
+            <div class="copyright-text">
+                <ul>
+                    <li><a href="#">Term&Use</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+                <div class="footer-social">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-instagram"></i></a>
+                    <a href="#"><i class="fa fa-dribbble"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+  <!-- Small JS for interactive bits -->
+  <script>
+    // Smooth scroll to anchors (basic)
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',e=>{
+        const target = document.querySelector(a.getAttribute('href'));
+        if(target){e.preventDefault();target.scrollIntoView({behavior:'smooth',block:'start'});}
+      })
+    })
+  </script>
+  <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/mixitup.min.js' %}"></script>
+    <script src="{% static 'js/jquery.slicknav.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>

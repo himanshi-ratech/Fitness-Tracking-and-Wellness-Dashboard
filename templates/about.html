@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Gutim Template">
+    <meta name="keywords" content="Gutim, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>About</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/slicknav.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header Section Begin -->
+    <header class="header-section">
+        <div class="container">
+            <div class="logo">
+                <a href="./index.html">
+                    <img src="{% static 'FITSPIRATION.png' %}" alt="">
+                </a>
+            </div>
+            <div class="nav-menu">
+                <nav class="mainmenu mobile-menu">
+                    <ul>
+                        <li><a href="{% url 'home' %}">Home</a></li>
+                        <li class="active"><a href="{% url 'about' %}">About</a></li>
+                        <li><a href="{% url 'classes' %}">Classes</a></li>
+                        <li><a href="{% url 'blog' %}">Blog</a></li>
+                        <li><a href="{% url 'user_fitness' %}">Dashboard</a></li>
+                        <li><a href="{% url 'contact' %}">Contacts</a></li>
+                    </ul>
+                </nav>
+                <a href="{% url 'login' %}" class="primary-btn signup-btn">Logout</a>
+
+            </div>
+            <div id="mobile-menu-wrap"></div>
+        </div>
+    </header>
+    <!-- Header End -->
+
+    <!-- Breadcrumb Section Begin -->
+    <section class="breadcrumb-section set-bg" data-setbg="{% static 'img/breadcrumb/classes-breadcrumb.jpg' %}">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-text">
+                        <h2>About</h2>
+                        <div class="breadcrumb-option">
+                            <a href="./index.html"><i class="fa fa-home"></i> Home</a>
+                            <span>About</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb Section End -->
+
+    <!-- About Section Begin -->
+    <section class="about-section about-page spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="about-pic">
+                        <img src="{% static 'img/about-pic.jpg' %} " alt="">
+                        <a href="{% static 'Video/Journey.mp4' %}" type="video/mp4" class="play-btn video-popup">
+                            <img src="{% static 'img/play.png' %}"  alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-text">
+                        <h2>Our Fitness Journey</h2>
+                        <p class="first-para">
+                            Founded with a vision to inspire healthier lifestyles, FitZone Gym has been transforming lives through expert training, modern facilities, and a community built on motivation and support.
+                        </p>
+                        <p class="second-para">
+                            Our certified trainers and nutrition specialists work together to create personalized programs that help every member achieve their fitness goals — whether it’s strength, endurance, or overall wellness.
+                        </p>
+                        <img src="{% static 'img/about-signature.png' %}" alt="">
+                        <div class="at-author">
+                            <h4>Lettie Chavez</h4>
+                            <span>Founder & CEO</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- About Section End -->
+
+    <!-- About Counter Section Begin -->
+    <div class="about-counter">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="about-counter-text">
+                        <div class="single-counter">
+                            <h1 class="counter-num count">98</h1>
+                            <p>Programs</p>
+                        </div>
+                        <div class="single-counter">
+                            <h1 class="counter-num count">14</h1>
+                            <p>Locations</p>
+                        </div>
+                        <div class="single-counter">
+                            <h1 class="counter-num count">50</h1>
+                            <span>k+</span>
+                            <p>Members</p>
+                        </div>
+                        <div class="single-counter">
+                            <h1 class="counter-num count">34</h1>
+                            <p>Coaches</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About Counter Section End -->
+
+    <!-- Gym Award Section Begin -->
+    <section class="gym-award spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="award-text">
+                    <h2>Best Gym Award</h2>
+                    <p>
+                        Recognized as the “Best Gym of the Year” for our innovation in training methods, state-of-the-art equipment, and exceptional member experience, we’re proud to set the standard for fitness excellence.
+                    </p>
+                    <p>
+                        This achievement reflects our commitment to building a strong, healthy, and confident community. Every workout, every member, and every success story fuels our mission to keep pushing boundaries in the fitness world.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <img src="{% static 'img/award.jpg' %}" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Gym Award Section End -->
+
+            <!-- Trainer Section Begin -->
+    <section class="trainer-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h2>EXPERT TRAINERS</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-trainer-item">
+                        <img src="{% static 'img/trainer/trainer-1.jpg' %}" alt="">
+                        <div class="trainer-text">
+                            <h5>Patrick Cortez</h5>
+                            <span>Leader</span>
+                            <p>Specialized in personal fitness transformation and leadership coaching, helping clients stay motivated and disciplined throughout their journey.</p>
+                            <div class="trainer-social">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-pinterest"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-trainer-item">
+                        <img src="{% static 'img/trainer/trainer-2.jpg' %}" alt="">
+                        <div class="trainer-text">
+                            <h5>Gregory Powers</h5>
+                            <span>Gym coach</span>
+                            <p>Certified strength and conditioning expert focused on muscle building, endurance training, and customized workout programs for all levels.</p>
+
+                            <div class="trainer-social">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-pinterest"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-trainer-item">
+                        <img src="{% static 'img/trainer/trainer-3.jpg' %}" alt="">
+                        <div class="trainer-text">
+                            <h5>Walter Wagner</h5>
+                            <span>Dance trainer</span>
+                           <p>Expert in dance-based fitness and flexibility routines, combining rhythm and movement to build strength, coordination, and stamina.</p>
+                            <div class="trainer-social">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-pinterest"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Trainer Section End -->
+
+    <!-- Banner Section Begin -->
+    <section class="banner-section set-bg" data-setbg="{% static 'img/banner-bg.jpg' %}">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="banner-text">
+                        <h2>Get training today</h2>
+                                                <p>Start your fitness journey now — transform your body, boost your energy, and build the confidence you deserve.</p>
+
+                        <a href="{% url 'contact' %}" class="primary-btn banner-btn">Contact Now</a>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <img src="{% static 'img/banner-person.png' %}" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Banner Section End -->
+
+    <br>
+    <br>
+
+    <!-- Footer Banner Section Begin -->
+    <section class="footer-banner">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="footer-banner-item set-bg" data-setbg="{% static 'img/footer-banner/footer-banner-1.jpg' %}">
+                        <span>New member</span>
+                        <h2>7 days for free</h2>
+                        <p>Complete the training sessions with us, surely you will be happy</p>
+                        <a href="#" class="primary-btn">Get Started</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="footer-banner-item set-bg" data-setbg="{% static 'img/footer-banner/footer-banner-2.jpg' %}">
+                        <span>contact us</span>
+                        <h2>+91 91870 98214</h2>
+                        <p>If you trust us on your journey, we will not disappoint you!</p>
+                        <a href="#" class="primary-btn">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer Banner Section End -->
+
+    <!-- Footer Section Begin -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="contact-option">
+                        <span>Phone</span>
+                        <p>+91 91870 98214</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="contact-option">
+                        <span>Address</span>
+                        <p>Rajiv Chowk, Delhi</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="contact-option">
+                        <span>Email</span>
+                        <p>fitspiration@gmail.com</p>
+                    </div>
+                </div>
+            </div>%
+            <div class="subscribe-option set-bg" data-setbg="{%static 'img/footer-signup.jpg' %} ">
+                <div class="so-text">
+                    <h4>Subscribe Us</h4>
+                    <p>Sign up to receive the latest information </p>
+                </div>
+                <form action="#" class="subscribe-form">
+                    <input type="text" placeholder="Enter Your Mail">
+                    <button type="submit"><i class="fa fa-send"></i></button>
+                </form>
+            </div>
+            <div class="copyright-text">
+                <ul>
+                    <li><a href="#">Term&Use</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+                <div class="footer-social">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-instagram"></i></a>
+                    <a href="#"><i class="fa fa-dribbble"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+
+    <!-- Js Plugins -->
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/mixitup.min.js' %}"></script>
+    <script src="{% static 'js/jquery.slicknav.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

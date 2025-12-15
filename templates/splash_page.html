@@ -1,0 +1,168 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Fitspiration — Onboarding</title>
+
+<!-- Google fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Merienda:wght@700&family=Merge+One&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg-color: #ffffff;
+}
+
+/* Reset & base */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Merienda', sans-serif;
+  background-color: var(--bg-color);
+}
+
+/* Splash container with background + overlay */
+.splash-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background-image: url('/static/bg.jpg'); /* replace with your image */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.splash-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5); /* overlay */
+  z-index: 1;
+}
+
+.splash-container > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Hero Brand */
+.hero-brand {
+  position: absolute;
+  left: 5%;
+  top: 20%;
+  font-family: 'Merienda', sans-serif;
+  font-weight: 700;
+  font-size: clamp(32px, 6vw, 64px);
+  line-height: 1.2;
+  text-transform: capitalize;
+  background: linear-gradient(90deg, #EA2F14 0%, #FB9E3A 49.52%, #FCEF91 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  text-shadow: 0px 4px 4px rgba(0,0,0,0.2);
+}
+
+/* Hero Heading */
+.hero-heading {
+  position: absolute;
+  left: 5%;
+  top: 35%;
+  width: 80%;
+  font-family: 'Merienda', sans-serif;
+  font-weight: 700;
+  font-size: clamp(20px, 4vw, 48px);
+  line-height: 1.3;
+  text-transform: capitalize;
+  color: #000;
+}
+
+/* Pagination dots */
+.progress-frame {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 20%;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.progress-frame .dot-large {
+  width: 31px;
+  height: 6px;
+  background: #000;
+  border-radius: 38px;
+}
+
+.progress-frame .dot-medium,
+.progress-frame .dot-small {
+  height: 6px;
+  background: rgba(21,21,21,0.2);
+  border-radius: 38px;
+}
+
+.progress-frame .dot-medium { width: 14px; }
+.progress-frame .dot-small { width: 8px; }
+
+/* Getting Started button */
+.getting-started {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 10%;
+  font-family: 'Merge One', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: clamp(18px, 3vw, 40px);
+  line-height: 1.3;
+  text-transform: capitalize;
+  color: #000;
+  text-decoration: none;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .hero-brand { top: 15%; }
+  .hero-heading { top: 28%; }
+}
+</style>
+</head>
+<body>
+  <div class="splash-container">
+    <div class="hero-brand">Fitspiration</div>
+    <div class="hero-heading">Track Your Fitness. <br> Transform Your Life.</div>
+
+    <div class="progress-frame">
+      <div class="dot-large"></div>
+      <div class="dot-medium"></div>
+      <div class="dot-small"></div>
+    </div>
+
+    <a class="getting-started" href="#">Getting started.....</a>
+  </div>
+
+  <script>
+        // Automatic redirect after 2 seconds
+        setTimeout(function() {
+            redirectSmooth("{% url 'login' %}");
+        }, 2000);
+
+        // Smooth fade-out function
+        function redirectSmooth(url) {
+            document.body.classList.add('fade-out'); // start fade
+            setTimeout(function() {
+                window.location.href = url; // redirect after fade
+            }, 1000); // wait 1 second for fade
+        }
+    </script>
+</body>
+</html>

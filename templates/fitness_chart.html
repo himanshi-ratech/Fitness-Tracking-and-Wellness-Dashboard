@@ -1,0 +1,278 @@
+{% comment %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fitness Progress Charts</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            background: #f5f6fa;
+        }
+        .btn-container {
+            margin: 20px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        canvas {
+            width: 80%;
+            max-width: 1200px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <h2>🏋️‍♀️ Fitness Progress Chart</h2>
+
+    <div class="btn-container">
+        <button onclick="showChart('daily')">Daily</button>
+        <button onclick="showChart('weekly')">Weekly</button>
+        <button onclick="showChart('monthly')">Monthly</button>
+    </div>
+
+    <canvas id="fitnessChart"></canvas>
+
+    <script>
+        // Django data to JS
+        const dailyLabels = {{ daily_data|safe }};
+        const dailyDays = {{ daily_data|safe }};
+        
+        const days = {{ daily_data|safe }};
+        const labels = days.map(d => d.day);
+        const fitness = days.map(d => d.fitness_score);
+        const caloriesOut = days.map(d => d.calories_out);
+        const steps = days.map(d => d.steps);
+        const nutrition = days.map(d => d.nutrition_score);
+        const workout = days.map(d => d.workout_score);
+        const hydration = days.map(d => d.hydration_score);
+
+
+        const weekly = {{ weekly_data|safe }};
+        const monthly = {{ monthly_data|safe }};
+
+        const ctx = document.getElementById('fitnessChart').getContext('2d');
+
+        let chart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [
+                    {
+                        label: 'fitness score',
+                        data: fitness,
+                        backgroundColor: 'rgba(54, 162, 235, 0.6)',
+                    },
+                    {
+                        label: 'Hydration Score',
+                        data: hydration,
+                        backgroundColor: 'rgba(255, 99, 132, 0.6)',
+                    },
+                    {
+                        label: 'Steps',
+                        data: steps,
+                        backgroundColor: 'rgba(137, 192, 75, 0.6)',
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                plugins: { legend: { position: 'top' } },
+                scales: { y: { beginAtZero: true } }
+            }
+        });
+
+        function showChart(type) {
+            if (type === 'daily') {
+                chart.data.labels = labels;
+                chart.data.datasets[0].data = fitness;
+                chart.data.datasets[1].data = hydration;
+                chart.data.datasets[2].data = steps;
+                
+
+                chart.update();
+            }
+            else if (type === 'weekly') {
+                chart.data.labels = ['Average'];
+                chart.data.datasets[0].data = [weekly.avg_fitness_score];
+                chart.data.datasets[1].data = [weekly.avg_steps];
+                chart.data.datasets[2].data = [weekly.avg_sleep];
+                chart.data.datasets[3].data = [weekly.avg_hydration];
+
+                chart.update();
+            }
+            else if (type === 'monthly') {
+                chart.data.labels = ['Monthly Avg'];
+                chart.data.datasets[0].data = [monthly.avg_fitness_score];
+                chart.data.datasets[1].data = [monthly.avg_steps];
+                chart.data.datasets[2].data = [monthly.avg_sleep];
+                chart.data.datasets[3].data = [monthly.avg_hydration];
+
+                chart.update();
+            }
+        }
+    </script>
+</body>
+</html> {% endcomment %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+<style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            background: #f5f6fa;
+        }
+        .btn-container {
+            margin: 20px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 20px 30px;
+            font-size:20px;
+            margin: 5px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        canvas {
+            width: 100%;
+            max-width: 1500px;
+            margin: 30px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+        }
+    </style>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<h2>🏋️ Fitness Progress Charts</h2>
+
+<div class="btn-container">
+    <button onclick="showChart('daily')">Daily</button>
+    <button onclick="showChart('weekly')">Weekly</button>
+    <button onclick="showChart('monthly')">Monthly</button>
+</div>
+
+<canvas id="fitnessChart"></canvas>
+
+<script>
+    const days = {{ daily_data|safe }};
+    const weekly = {{ weekly_data|safe }};
+    const monthly = {{ monthly_data|safe }};
+
+    const labels = days.map(d => d.day);
+
+    const fitness = days.map(d => d.fitness_score);
+    const hydration = days.map(d => d.hydration_score);
+    const sleep = days.map(d => d.sleep_score);
+    const steps = days.map(d => d.steps_score);
+    const nutrition = days.map(d => d.nutrition_score);
+    const workout = days.map(d => d.workout_score);
+
+    const ctx = document.getElementById('fitnessChart').getContext('2d');
+
+    let chart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [
+                { label: 'Fitness Score', data: fitness, borderWidth: 2 },
+                { label: 'Hydration Score', data: hydration, borderWidth: 2 },
+                { label: 'Sleep Score', data: sleep, borderWidth: 2 },
+                { label: 'Steps Score', data: steps, borderWidth: 2 },
+                { label: 'Nutrition Score', data: nutrition, borderWidth: 2 },
+                { label: 'Workout Score', data: workout, borderWidth: 2 },
+            ]
+        },
+        options: {
+    responsive: true,
+
+    plugins: {
+        legend: {
+            position: 'top',
+            labels: {
+                font: { size: 18 }
+            }
+        }
+    },
+
+    scales: {
+        x: {
+            ticks: {
+                font: { size: 16 }
+            }
+        },
+        y: {
+            beginAtZero: true,
+            ticks: {
+                font: { size: 16 }
+            }
+        }
+    }
+}
+
+    });
+
+    function showChart(type) {
+        if (type === 'daily') {
+            chart.data.labels = labels;
+            chart.data.datasets[0].data = fitness;
+            chart.data.datasets[1].data = hydration;
+            chart.data.datasets[2].data = sleep;
+            chart.data.datasets[3].data = steps;
+            chart.data.datasets[4].data = nutrition;
+            chart.data.datasets[5].data = workout;
+        }
+
+        else if (type === 'weekly') {
+            chart.data.labels = ['Weekly Average'];
+            chart.data.datasets[0].data = [weekly.avg_fitness_score];
+            chart.data.datasets[1].data = [weekly.avg_hydration];
+            chart.data.datasets[2].data = [weekly.avg_sleep];
+            chart.data.datasets[3].data = [weekly.avg_steps];
+            chart.data.datasets[4].data = [weekly.avg_nutrition];
+            chart.data.datasets[5].data = [weekly.avg_workout];
+        }
+
+        else if (type === 'monthly') {
+            chart.data.labels = ['Monthly Average'];
+            chart.data.datasets[0].data = [monthly.avg_fitness_score];
+            chart.data.datasets[1].data = [monthly.avg_hydration];
+            chart.data.datasets[2].data = [monthly.avg_sleep];
+            chart.data.datasets[3].data = [monthly.avg_steps];
+            chart.data.datasets[4].data = [monthly.avg_nutrition];
+            chart.data.datasets[5].data = [monthly.avg_workout];
+        }
+
+        chart.update();
+    }
+</script>
+
+</body>
+</html>
